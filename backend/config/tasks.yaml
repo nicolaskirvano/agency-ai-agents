@@ -1,0 +1,75 @@
+analyze_demand:
+  description: >
+    Analise a seguinte demanda e identifique quais departamentos precisam
+    ser acionados: {demand}
+
+    Classifique a demanda em uma ou mais categorias:
+    - design: criação visual, artes, banners, identidade
+    - social_media: planejamento de conteúdo, calendário, posts
+    - ads: campanhas pagas, tráfego, Meta Ads, Google Ads
+    - copy: textos, legendas, scripts, emails
+    - analytics: relatórios, métricas, análise de dados
+
+    Crie um plano de ação com a ordem de execução.
+  expected_output: >
+    JSON com: departments (lista), action_plan (passos ordenados),
+    priority (alta/média/baixa), estimated_tasks (número de tarefas)
+
+create_visual:
+  description: >
+    Crie um briefing detalhado de design para: {brief}
+
+    Inclua: dimensões, paleta de cores, estilo visual, referências,
+    elementos obrigatórios, variações necessárias (feed, stories, etc).
+  expected_output: >
+    Briefing completo de design com especificações técnicas,
+    diretrizes visuais e checklist de entregáveis.
+
+plan_content:
+  description: >
+    Crie um plano de conteúdo para {platform} sobre: {topic}
+
+    Período: {period}
+    Inclua: tipos de post, horários, hashtags, hooks de abertura,
+    CTAs e formatos (carrossel, reels, stories, etc).
+  expected_output: >
+    Calendário editorial completo com posts detalhados,
+    horários de publicação e estratégia de hashtags.
+
+create_campaign:
+  description: >
+    Crie uma estratégia de campanha de anúncios para: {objective}
+
+    Plataforma: {platform}
+    Orçamento: {budget}
+    Público-alvo: {audience}
+
+    Inclua: estrutura de campanha, segmentação de público,
+    tipos de anúncio, estratégia de lance e métricas de sucesso.
+  expected_output: >
+    Plano completo de campanha com estrutura, públicos,
+    orçamento distribuído e KPIs esperados.
+
+write_copy:
+  description: >
+    Escreva copy para: {content_type}
+    Tema: {topic}
+    Tom de voz: {tone}
+    Plataforma: {platform}
+
+    Use técnicas de copywriting adequadas e adapte ao formato da plataforma.
+  expected_output: >
+    Textos prontos para uso com variações para teste A/B,
+    headlines, body copy e CTAs.
+
+generate_report:
+  description: >
+    Gere um relatório de performance para: {report_type}
+    Período: {period}
+    Dados disponíveis: {data}
+
+    Analise tendências, identifique pontos de melhoria e
+    sugira ações concretas baseadas nos dados.
+  expected_output: >
+    Relatório com métricas principais, análise de tendências,
+    comparativo com período anterior e recomendações.
