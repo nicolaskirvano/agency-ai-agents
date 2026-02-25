@@ -19,8 +19,9 @@ def get_llm() -> LLM:
     if provider == "glm5":
         return LLM(
             model=os.getenv("GLM_MODEL", "glm-5"),
-            base_url=os.getenv("GLM_BASE_URL", "https://api.z.ai/api/paas/v4/"),
+            base_url=os.getenv("GLM_BASE_URL", "https://api.z.ai/api/coding/paas/v4/"),
             api_key=os.getenv("GLM_API_KEY", ""),
+            max_tokens=4096,
         )
     elif provider == "anthropic":
         return LLM(
