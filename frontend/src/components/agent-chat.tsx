@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { AgentResponse } from "@/components/agent-response";
 
 interface Message {
   id: string;
@@ -121,7 +122,11 @@ export function AgentChat({
                     : "bg-muted"
                 }`}
               >
-                <p className="whitespace-pre-wrap text-sm">{msg.content}</p>
+                {msg.role === "agent" ? (
+                  <AgentResponse content={msg.content} />
+                ) : (
+                  <p className="whitespace-pre-wrap text-sm">{msg.content}</p>
+                )}
                 <p className="mt-1 text-xs opacity-60">
                   {msg.timestamp.toLocaleTimeString("pt-BR", {
                     hour: "2-digit",
