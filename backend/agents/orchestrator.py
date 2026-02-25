@@ -5,8 +5,8 @@ from .base_agent import create_agent
 class OrchestratorCrew:
     """Agente orquestrador que analisa demandas e delega para departamentos."""
 
-    def __init__(self, llm: str = "openai/gpt-4o"):
-        self.agent = create_agent("orchestrator", llm=llm)
+    def __init__(self):
+        self.agent = create_agent("orchestrator")
 
     def analyze_demand(self, demand: str, context: str | None = None) -> str:
         full_demand = demand

@@ -33,7 +33,40 @@ tasks_store: dict[str, dict] = {}
 
 @router.get("/health")
 async def health():
-    return {"status": "ok", "service": "agency-ai-agents"}
+    import os
+
+    return {
+        "status": "ok",
+        "service": "agency-ai-agents",
+        "llm_provider": os.getenv("LLM_PROVIDER", "glm5"),
+    }
+
+
+@router.get("/llm/provider")
+async def get_llm_provider():
+    import os
+
+    provider = os.getenv("LLM_PROVIDER", "glm5")
+    providers = {
+        "glm5": {
+            "name": "GLM-5 (Zhipu AI)",
+            "model": os.getenv("GLM_MODEL", "glm-5"),
+            "base_url": os.getenv("GLM_BASE_URL", "https://api.z.ai/api/paas/v4/"),
+        },
+        "openai": {
+            "name": "OpenAI",
+            "model": os.getenv("OPENAI_MODEL", "gpt-4o"),
+        },
+        "anthropic": {
+            "name": "Anthropic Claude",
+            "model": "claude-sonnet-4-20250514",
+        },
+    }
+    return {
+        "active": provider,
+        "config": providers.get(provider, {}),
+        "available": list(providers.keys()),
+    }
 
 
 @router.get("/departments")

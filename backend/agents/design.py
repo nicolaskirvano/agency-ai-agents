@@ -5,8 +5,8 @@ from .base_agent import create_agent
 class DesignCrew:
     """Agente de Design - cria briefings visuais e direção de arte."""
 
-    def __init__(self, llm: str = "openai/gpt-4o"):
-        self.agent = create_agent("design_agent", llm=llm)
+    def __init__(self):
+        self.agent = create_agent("design_agent")
 
     def create_visual_brief(
         self,

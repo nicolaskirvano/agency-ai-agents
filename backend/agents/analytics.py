@@ -5,8 +5,8 @@ from .base_agent import create_agent
 class AnalyticsCrew:
     """Agente de Analytics - análise de dados e relatórios de performance."""
 
-    def __init__(self, llm: str = "openai/gpt-4o"):
-        self.agent = create_agent("analytics_agent", llm=llm)
+    def __init__(self):
+        self.agent = create_agent("analytics_agent")
 
     def generate_report(
         self,

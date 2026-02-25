@@ -5,8 +5,8 @@ from .base_agent import create_agent
 class SocialMediaCrew:
     """Agente de Social Media - planejamento de conteúdo e estratégia."""
 
-    def __init__(self, llm: str = "openai/gpt-4o"):
-        self.agent = create_agent("social_media_agent", llm=llm)
+    def __init__(self):
+        self.agent = create_agent("social_media_agent")
 
     def plan_content(
         self,

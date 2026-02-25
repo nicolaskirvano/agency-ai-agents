@@ -5,8 +5,8 @@ from .base_agent import create_agent
 class AdsCrew:
     """Agente de Ads - gestão de tráfego pago e campanhas."""
 
-    def __init__(self, llm: str = "openai/gpt-4o"):
-        self.agent = create_agent("ads_agent", llm=llm)
+    def __init__(self):
+        self.agent = create_agent("ads_agent")
 
     def create_campaign(
         self,
